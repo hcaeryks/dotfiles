@@ -1,0 +1,63 @@
+[bar/bottombar]
+width = 100%
+height = 25
+bottom = true
+
+background = #111111
+foreground = #90FFFFFF
+
+font-0 = Open Sans:pixelsize=10;1
+font-1 = FontAwesome:pixelsize=10;1
+
+separator = "  "
+modules-left = xkeyboard
+modules-center = temperature cpu memory
+modules-right = restarter poweroff
+
+tray-position = right
+tray-padding = 5
+tray-transparent = true
+
+[module/memory]
+type = internal/memory
+label = MEMORY %percentage_used%%
+label-padding = 10
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+label = CPU %percentage%%
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+thermal-zone = 0
+warn-temperature = 60
+label = TEMPERATURE %temperature%
+label-padding = 10
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/restarter]
+type = custom/script
+exec = echo '  Reboot   '
+click-left = java -jar ~/.jar/Restart.jar
+
+[module/poweroff]
+type = custom/script
+exec = echo 'Shutdown   '
+click-left = java -jar ~/.jar/Shutdown.jar

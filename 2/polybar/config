@@ -1,0 +1,70 @@
+[colors]
+background = ${xrdb:color0:#222}
+background-alt = #444
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+[bar/bartop]
+width = 100%
+height = 27
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+padding-left = 0
+padding-right = 0
+
+module-margin-top = 50
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = xft:Iosevka Nerd Font Mono:style=Regular:size=10
+font-1 = Font Awesome 5 Free Regular:style=Regular
+font-2 = Font Awesome 5 Free Solid:style=Solid
+
+modules-left = user
+modules-center = date
+modules-right = lockscreen reboot shutdown
+
+tray-position = right
+tray-padding = 2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/lockscreen]
+type = custom/script
+
+exec = echo '  '
+click-left = betterlockscreen -l dimblur
+
+[module/reboot]
+type = custom/script
+exec = echo '  '
+
+[module/shutdown]
+type = custom/script
+exec = echo '   '
+
+[module/user]
+type = custom/script
+
+exec = echo '  '$USER
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%d/%m/%Y"
+
+time = %H:%M
+
+label =  %date%     %time%

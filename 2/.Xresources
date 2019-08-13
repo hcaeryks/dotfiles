@@ -1,0 +1,21 @@
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Shift-Up:	      command:\033]720;1\007
+URxvt.keysym.Shift-Down:      command:\033]721;1\007
+
+URxvt*geometry:		      80x30
+URxvt*scrollBar:	      false
+
+URxvt.internalBorder:	      10
+
+Xft.dpi:       		      96
+Xft.antialias:  	      true
+Xft.rgba:       	      rgb
+Xft.hinting:    	      true
+Xft.hintstyle: 	 	      hintfull
+
+URxvt.font:		      xft:Iosevka Nerd Font Mono:style=Regular:size=12
+URxvt.boldFont:		      xft:Iosevka Nerd Font Mono:style=Bold:size=12
+URxvt.italicFont:	      xft:Iosevka Nerd Font Mono:style=Italic:size=12
+URxvt.boldItalicFont:	      xft:Iosevka Nerd Font Mono:style=Bold Italic:size=12
+URxvt.letterSpace:	      0
